@@ -9,6 +9,8 @@ export default function Butaozinho(props) {
         width: '280px',
         height: '48px',
         mt: '20px', 
+        border: '2px solid',
+        borderColor: props.bordercolor, 
         ml: '20px', 
         borderRadius: '8px',
         padding: '12px 16px',
@@ -17,7 +19,8 @@ export default function Butaozinho(props) {
         color: props.textcolor, 
         textTransform: 'none',
         '&:hover': {
-          backgroundColor: '#09304E', 
+          backgroundColor: props.backcolor, 
+          borderColor: props.bordercolor,
         }
       }}
     >
