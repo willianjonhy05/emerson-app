@@ -8,7 +8,8 @@ import CardInfo from './componentes/CardInfo';
 import HistoricoMedico from './componentes/CardHistoricoMedico';
 import CardConsulta from './componentes/CardConsultas';
 import CardFavorito from './componentes/CardFavoritos';
-
+import CardFavoritoDois from './componentes/CardFavoritosDois';
+import MyTabs from './componentes/MyTabs';
 
 
 function App() {
@@ -54,6 +55,10 @@ function App() {
       <CardConsulta nomeCompleto={"Ana Lúcia"} data={"14/08/2023"} especialidade={"Angiologista"} detalhar={true} />
       <hr />
       <CardFavorito />
+      <hr />
+      <CardFavoritoDois nomeCompleto={"Ana Lúcia"} especialidade={"Angiologista"} />
+      <hr />
+      <MyTabs />
     </>
   )
 }
