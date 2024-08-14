@@ -5,11 +5,26 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ButaoMedio from './componentes/MyButtonMedio';
 import ButaoSublinhado from './componentes/ButtonSublinhado';
 import CardInfo from './componentes/CardInfo';
-
+import HistoricoMedico from './componentes/CardHistoricoMedico';
+import CardConsulta from './componentes/CardConsultas';
+import CardFavorito from './componentes/CardFavoritos';
 
 
 
 function App() {
+
+  const listdoencas = [
+    { nome: 'Diabetes', nivel: 'Moderado' },
+    { nome: 'Hipertensão', nivel: 'Grave' },
+    { nome: 'Asma', nivel: 'Leve' },
+
+];
+
+  const consultas = [
+    { nomeMedico: 'Dr. João Silva', data: '10/08/2020', especialidade: 'Cardiologia' },
+    { nomeMedico: 'Dra. Maria Oliveira', data: '17/03/2019', especialidade: 'Endocrinologia' },
+    { nomeMedico: 'Dr. William Sousa', data: '14/03/2024', especialidade: 'Clínico Geral de Nada' },
+  ];
 
 
   return (
@@ -27,7 +42,18 @@ function App() {
       <ButaoSublinhado text={"Clique aqui"} color='white' />
       <ButaoSublinhado text={"Clique Aqui"} color="#0B3B60" />
       <hr />
-      <CardInfo />
+      <CardInfo NomeCompleto={"Joana Magalhães Souza"} Data={"25/05/1990"} CidadeUf={"São Paulo-SP"} showTitle={true}  />
+      <CardInfo NomeCompleto={"Joana Magalhães Souza"} Data={"25/05/1990"} CidadeUf={"São Paulo-SP"} showTitle={false}  />
+      <hr />
+      <HistoricoMedico tipo="doencas" dados={listdoencas} />
+      <hr />
+      <HistoricoMedico tipo="consults" dados={consultas} />
+      <hr />
+      <CardConsulta nomeCompleto={"Ana Lúcia"} data={"14/08/2023"} especialidade={"Angiologista"} detalhar={false} />
+      <hr />
+      <CardConsulta nomeCompleto={"Ana Lúcia"} data={"14/08/2023"} especialidade={"Angiologista"} detalhar={true} />
+      <hr />
+      <CardFavorito />
     </>
   )
 }
