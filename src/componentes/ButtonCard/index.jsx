@@ -4,8 +4,8 @@ import Typography from '@mui/material/Typography';
 
 export default function ButtonCard(props) {
     return ( 
-        <Typography variant="body2" sx={{ marginTop: 3 }} >
-        <Button variant="contained" sx={{
+        <Typography {...props} variant="body2" sx={{ marginTop: 3 }} >
+        <Button  variant="contained" sx={{            
             backgroundColor: props.backgroundColor,
             borderRadius: '8px',
             color: props.color,

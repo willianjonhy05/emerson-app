@@ -12,7 +12,7 @@ export default function HistoricoCard({ tipo, dados }) {
     return (
         <Card sx={{ minWidth: 320, maxWidth: 340 }}>
             <CardContent>
-                <Typography sx={{ fontSize: 16, fontWeight: 'bold', textAlign: 'left', color: "#339CFF", display: 'flex', marginBottom: 1 }} color="text.primary" gutterBottom>
+                <Typography sx={{ fontSize: 16, fontWeight: 'bold', textAlign: 'left', color: "#339CFF", display: 'flex', marginBottom: 1, gap:'5px' }} color="text.primary" gutterBottom>
                     <IconComponent /> {titulo}
                 </Typography>
 

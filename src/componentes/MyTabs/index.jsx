@@ -9,7 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 export default function MyTabs() {
 
   return (
-    <Tabs sx={{ justifyContent: 'center', backgroundColor: '#0B3B60',  width: 360, height: 76,  }} aria-label="icon label tabs example">
+    <Tabs sx={{ justifyContent: 'center', backgroundColor: '#0B3B60' }} aria-label="icon label tabs example">
       <Tab 
         sx={{ 
           color: 'white', 
