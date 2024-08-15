@@ -17,7 +17,18 @@ export default function Depoimentos(props) {
     return (
         <Card>
             <CardContent>
-                <Typography sx={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: "#339CFF", display: 'flex', marginBottom: 1 }} color="text.primary" gutterBottom>
+                <Typography
+                    sx={{
+                        fontSize: 20,
+                        fontWeight: 'bold',
+                        color: "#0B3360",
+                        marginBottom: 1,
+                        textAlign: 'center',
+                        marginBottom: 1,
+                        marginTop: 1,
+                    }}
+                    gutterBottom
+                >
                     Depoimentos
                 </Typography>
                 {props.depoimentos.map((item, index) => (
@@ -25,8 +36,19 @@ export default function Depoimentos(props) {
                         <Typography variant="body2">
                             {item.depoimento}
                         </Typography>
-                        <Typography sx={{ fontSize: 16, fontWeight: 'bold', textAlign: 'left', color: "#339CFF", display: 'flex', marginBottom: 1 }} color="text.secondary" gutterBottom>
-                            {item.nomeCompleto},  {item.idade} anos, {item.cidadeUf}
+                        <Typography
+                            sx={{
+                                fontSize: 16,
+                                fontWeight: 'bold',
+                                color: "#6B6E71",
+                                textAlign: 'center', 
+                                marginBottom: 1,
+                                marginTop: 2,
+                            }}
+                            color="text.secondary"
+                            gutterBottom
+                        >
+                            {item.nomeCompleto}, {item.idade} anos, {item.cidadeUf}
                         </Typography>
                         <hr />
                     </div>

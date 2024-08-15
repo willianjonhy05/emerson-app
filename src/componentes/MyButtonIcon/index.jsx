@@ -14,7 +14,7 @@ export default function ButaozinhoComIcon(props) {
         backgroundColor: props.color,
         borderRadius: 2,
         '&:hover':{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: props.color,
             color: props.colorHover
         }
       }}

@@ -9,14 +9,14 @@ export default function PesquisaMedica() {
       component="form"
       sx={{
         backgroundColor: "white",
-        '& > :not(style)': { m: 1, width: '40ch', padding: 1 },
+        '& > :not(style)': { m: 1, padding: 1 },
       }}
       noValidate
       autoComplete="off"
     >
       <TextField id="outlined-basic" label="Digite a sua especialidade" variant="outlined" />
       <TextField id="outlined-basic" label="Digite a sua localização" variant="outlined" />
-      <ButaozinhoComIcon variant="contained" color="white" text="Buscar" />
+      <ButaozinhoComIcon variant="contained" color="#0B3B60" text="Buscar" />
       
     </Box>
   );

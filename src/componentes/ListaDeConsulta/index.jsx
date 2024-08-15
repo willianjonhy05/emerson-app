@@ -12,7 +12,7 @@ import Rating from '@mui/material/Rating';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function CardFavorito(props) {
+export default function ListaDeConsultas(props) {
     return (
         <Card sx={{ minWidth: 320, maxWidth: 340, backgroundColor: "E7EBEF" }}>
             <CardContent>
@@ -45,6 +45,9 @@ export default function CardFavorito(props) {
                 </Typography>
                 <Typography sx={{ fontSize: 16, textAlign: 'left' }} color="text.secondary">
                     {props.cidadeUf}
+                </Typography>
+                <Typography sx={{ fontSize: 16, textAlign: 'left' }} color="text.secondary">
+                    {props.data}
                 </Typography>
                 <ButtonCard backgroundColor="#0B3B60" color="white" text="Agendar consulta" />
             </CardContent>
