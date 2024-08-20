@@ -1,20 +1,20 @@
-export const especialistas = [
+export const especialistasData = [
     {
         nomeCompleto: "Ana Lúcia",
         especialidade: "Angiologista",
-        cidadeUf: "São Paulo - SP",
         data: "01/02/2022",
+        image: 'http://localhost:5173/src/assets/doutora.png'
     },
     {
         nomeCompleto: "Paulo Matos",
         especialidade: "Otorrinolaringologista",
-        cidadeUf: "Rio de Janeiro - RJ",
         data: "09/08/2022",
+        image: 'http://localhost:5173/src/assets/doutor_negro.png' 
     },
     {
         nomeCompleto: "Mariana Luz",
         especialidade: "Mastologista",
-        cidadeUf: "Belo Horizonte - MG",
         data: "07/10/2022",
+        image: 'http://localhost:5173/src/assets/doutora_modelo.png'  
     }
 ];

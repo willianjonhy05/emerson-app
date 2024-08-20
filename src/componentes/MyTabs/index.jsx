@@ -5,41 +5,68 @@ import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function MyTabs() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
 
+  const currentPath = location.pathname;
+  
 
-  const navigateTo = useNavigate();
-
-  const goToConsultas = () => {
-      navigateTo("/consultas");
+  const getTabValue = () => {
+    switch (currentPath) {
+      case '/consultas':
+        return 1;
+      case '/meu-perfil':
+        return 3;
+      case '/resultados':
+        return 2;
+      default:
+        return 0; 
+    }
   };
 
-  const goToHome = () => {
-    navigateTo("/");
-  }
+  const [value, setValue] = React.useState(getTabValue());
 
-  const goToMeuPerfil = () => {
-    navigateTo("/meu-perfil");
-  }
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    switch (newValue) {
+      case 0:
+        navigate("/");
+        break;
+      case 1:
+        navigate("/consultas");
+        break;
+      case 2:
+        navigate("/resultados");
+        break;
+      case 3:
+        navigate("/meu-perfil");
+        break;
+      default:
+        break;
+    }
+  };
 
-
+  const iconColor = (selected) => (selected ? '#339CFF' : 'white');
 
   return (
     <Tabs
+      value={value}
+      onChange={handleChange}
       sx={{
-        justifyContent: 'center',
         backgroundColor: '#0B3B60',
         display: 'flex',
         flexDirection: 'row',
       }}
-      variant="fullWidth" // Torna as tabs responsivas
+      variant="fullWidth"
       aria-label="icon label tabs example"
     >
       <Tab
         sx={{
-          color: 'white',
+          color: iconColor(value === 0),
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
@@ -47,11 +74,10 @@ export default function MyTabs() {
         }}
         icon={<HomeIcon />}
         label="Início"
-        onClick={goToHome}
       />
       <Tab
         sx={{
-          color: 'white',
+          color: iconColor(value === 1),
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
@@ -59,11 +85,10 @@ export default function MyTabs() {
         }}
         icon={<CalendarMonthIcon />}
         label="Consultas"
-        onClick={goToConsultas}
       />
       <Tab
         sx={{
-          color: 'white',
+          color: iconColor(value === 2),
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
@@ -74,7 +99,7 @@ export default function MyTabs() {
       />
       <Tab
         sx={{
-          color: 'white',
+          color: iconColor(value === 3),
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
@@ -82,7 +107,6 @@ export default function MyTabs() {
         }}
         icon={<PersonIcon />}
         label="Perfil"
-        onClick={goToMeuPerfil}
       />
     </Tabs>
   );
